@@ -54,17 +54,17 @@ public class JavaSqlPlus02 {
 	                    DB_USN = usnpwd[0];
 	                    DB_PWD = usnpwd[1];
 	                } else {
-	                    System.out.println("❌ Invalid input format. Use: username/password");
+	                    System.out.println(" Invalid input format. Use: username/password");
 	                    continue;
 	                }
 
 	                // Try to establish DB connection
 	                try {
 	                    con = DriverManager.getConnection(DB_URL, DB_USN, DB_PWD);
-	                    System.out.println("\n✅ Connected successfully to Oracle Database!");
+	                    System.out.println("\n Connected successfully to Oracle Database!");
 	                    con.setAutoCommit(false);  // Manual commit for DML
 	                } catch (SQLException e) {
-	                    System.out.println("\n❌ Connection failed: " + e.getMessage());
+	                    System.out.println("\n Connection failed: " + e.getMessage());
 	                    continue;
 	                }
 
@@ -85,7 +85,7 @@ public class JavaSqlPlus02 {
 
 	                    // Exit command check
 	                    if (query.trim().toLowerCase().contains("exit;")) {
-	                        System.out.println("\n👋 Thank You, Visit Again!");
+	                        System.out.println("\n Thank You, Visit Again!");
 	                        break;
 	                    }
 
@@ -143,23 +143,23 @@ public class JavaSqlPlus02 {
 	                        query = query.toUpperCase();
 
 	                        if (query.contains("INSERT")) {
-	                            System.out.println("✅ 1 row inserted");
+	                            System.out.println(" 1 row inserted");
 	                        } else if (query.contains("UPDATE")) {
-	                            System.out.println("✅ " + updatedCount + " row(s) updated");
+	                            System.out.println(" " + updatedCount + " row(s) updated");
 	                        } else if (query.contains("DELETE")) {
-	                            System.out.println("✅ " + updatedCount + " row(s) deleted");
+	                            System.out.println(" " + updatedCount + " row(s) deleted");
 	                        } else if (query.contains("COMMIT")) {
-	                            System.out.println("✅ Commit complete.");
+	                            System.out.println(" Commit complete.");
 	                        } else if (query.contains("ROLLBACK")) {
-	                            System.out.println("⏪ Rollback complete.");
+	                            System.out.println(" Rollback complete.");
 	                        } else if (query.contains("CREATE TABLE")) {
-	                            System.out.println("✅ Table created.");
+	                            System.out.println(" Table created.");
 	                        } else if (query.contains("ALTER TABLE")) {
-	                            System.out.println("✅ Table altered.");
+	                            System.out.println(" Table altered.");
 	                        } else if (query.contains("DROP TABLE")) {
-	                            System.out.println("🗑️ Table dropped.");
+	                            System.out.println(" Table dropped.");
 	                        } else {
-	                            System.out.println("✅ Query executed. " + updatedCount + " row(s) affected.");
+	                            System.out.println(" Query executed. " + updatedCount + " row(s) affected.");
 	                        }
 	                    }
 	                    // ==== End of SQL Execution Block ====
@@ -172,7 +172,7 @@ public class JavaSqlPlus02 {
 	            } // === End of SQL Query Execution Loop ===
 
 	        } catch (ClassNotFoundException e) {
-	            System.out.println("❌ JDBC Driver class not found.");
+	            System.out.println(" JDBC Driver class not found.");
 	        } catch (IOException | SQLException e) {
 	            e.printStackTrace();
 	        } finally {
@@ -189,6 +189,7 @@ public class JavaSqlPlus02 {
 	        } // === End of main try-catch-finally ===
 	    } // === End of main method ===
 	} // === End of Sql_new1 class ===
+
 
 
 
